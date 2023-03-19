@@ -1,5 +1,11 @@
 .infoCard {
   padding: 0 30px;
+  @media screen and (max-width: 790px) {
+    padding: 0 50px;
+  }
+  @media screen and (max-width: 400px) {
+    padding: 0 10px;
+  }
 }
 
 .CountriesInfo {
@@ -15,7 +21,7 @@
   .Info {
     max-width: 50%;
     width: 100%;
-    padding: 50px;
+    padding: 40px;
     h2 {
       font-weight: 800;
       font-size: 20px;
@@ -23,13 +29,31 @@
     }
     li {
       margin-bottom: 10px;
+      margin-right: 5px;
     }
     ul {
       display: flex;
       flex-direction: column;
-      direction: columns;
       flex-wrap: wrap;
-      max-height: 200px;
+      max-height: 400px;
+    }
+  }
+
+  @media screen and (max-width: 790px) {
+    flex-direction: column;
+    .Flag {
+      max-width: 100%;
+
+      width: 100%;
+    }
+
+    .Info {
+      max-width: 100%;
+      padding: 20px;
+      ul {
+        flex-wrap: nowrap;
+        max-height: none;
+      }
     }
   }
 }
@@ -41,9 +65,17 @@
   box-shadow: 2px 2px 2px 2px lightgrey;
   margin-bottom: 50px;
   border-radius: 10px;
+  @media screen and (max-width: 400px) {
+    width: 70px;
+    height: 30px;
+    font-size: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+  }
 }
 
 .borderCountry {
+  display: inline-block;
   width: 80px;
   height: 50px;
   padding: 5px;
@@ -51,9 +83,30 @@
   box-shadow: 2px 2px 2px 2px lightgrey;
   border-radius: 10px;
   margin-left: 10px;
+  margin-bottom: 10px;
+  @media screen and (max-width: 790px) {
+    width: 60px;
+    height: 30px;
+    font-size: 10px;
+    border-radius: 5px;
+  }
+}
+
+.buttonsBorder {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .borderCountriesContainer {
   display: flex;
   align-items: center;
+  span {
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: 400px) {
+    flex-direction: column;
+    align-items: baseline;
+  }
 }

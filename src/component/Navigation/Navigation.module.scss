@@ -4,10 +4,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  // @media screen and (max-width: 790px) {
+  //   grid-template-columns: 1fr 1fr;
+  // }
 
   .Search {
     width: 33.333%;
     height: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  @media screen and (max-width: 790px) {
+    .Search {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+    .Search {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+  }
+  select {
+    margin-left: 20px;
+    height: 40px;
+    width: 200px;
     background-color: #fff;
     border-radius: 10px;
   }

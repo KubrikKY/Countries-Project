@@ -45,7 +45,7 @@ function CountriesInfo(props) {
               <span>Capital:</span> {props.capital}
             </li>
             <li>
-              <span>Top Level Domain:</span> {props.capital}
+              <span>Top Level Domain:</span> {props.tld}
             </li>
             <li>
               <span>Curriencies:</span> {currencies.join(', ')}
@@ -57,19 +57,20 @@ function CountriesInfo(props) {
           {props.borders && (
             <div className={classes.borderCountriesContainer}>
               <span>Border Countries: </span>
-
-              {props.borders.map((e) => {
-                return (
-                  <button
-                    className={classes.borderCountry}
-                    value={e}
-                    key={12 + e}
-                    onClick={() => props.selectBorderCountries(e)}
-                  >
-                    {props.borderName[e]}
-                  </button>
-                );
-              })}
+              <div className={classes.buttonsBorder}>
+                {props.borders.map((e) => {
+                  return (
+                    <button
+                      className={classes.borderCountry}
+                      value={e}
+                      key={12 + e}
+                      onClick={() => props.selectBorderCountries(e)}
+                    >
+                      {props.borderName[e]}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           )}
         </div>

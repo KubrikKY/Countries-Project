@@ -3,6 +3,21 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 14px;
   color: #000;
+  height: 100%;
+}
+
+button:active {
+  border: hsl(0, 0%, 98%);
+  box-shadow: 1px 1px 1px 1px lightgrey;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+button {
+  opacity: 0.7;
+  transition: opacity 0.2s linear;
 }
 
 * {
