@@ -16,6 +16,7 @@ function CountriesList(props) {
             capital={e.capital}
             selectCountry={(countryInfo) => props.selectCountries(countryInfo)}
             cca3={e.cca3}
+            toggleTheme={props.toggleTheme}
           />
         );
       })}

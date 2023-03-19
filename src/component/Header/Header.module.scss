@@ -20,3 +20,21 @@
     }
   }
 }
+
+.darkTheme {
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0 0 6px 0 #000;
+}
+
+.toggleTheme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100px;
+  width: 100%;
+  cursor: pointer;
+  img {
+    width: 25px;
+    height: auto;
+  }
+}

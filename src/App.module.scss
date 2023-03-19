@@ -1,4 +1,10 @@
 .App {
+  min-height: 100vh;
+
   background-color: hsl(0, 0%, 98%);
-  height: 100%;
+}
+
+.darkTheme {
+  background-color: hsl(207, 26%, 17%);
+  color: hsl(0, 0%, 100%);
 }

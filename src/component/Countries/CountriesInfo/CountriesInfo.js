@@ -17,9 +17,17 @@ function CountriesInfo(props) {
     languages.push(lang);
   }
 
+  const clsBackButton = [classes.buttonBack];
+  const clsBorderButton = [classes.borderCountry];
+
+  if (!props.toggleTheme) {
+    clsBackButton.push(classes.DarkTheme);
+    clsBorderButton.push(classes.DarkTheme);
+  }
+
   return (
     <div className={classes.infoCard}>
-      <button className={classes.buttonBack} onClick={props.backToList}>
+      <button className={clsBackButton.join(' ')} onClick={props.backToList}>
         Back
       </button>
       <div className={classes.CountriesInfo}>
@@ -61,7 +69,7 @@ function CountriesInfo(props) {
                 {props.borders.map((e) => {
                   return (
                     <button
-                      className={classes.borderCountry}
+                      className={clsBorderButton.join(' ')}
                       value={e}
                       key={12 + e}
                       onClick={() => props.selectBorderCountries(e)}

@@ -2,9 +2,14 @@ import React from 'react';
 import classes from './CountriesCard.module.scss';
 
 function CountriesCard(props) {
+  const cls = [classes.CountriesCard];
+  if (!props.toggleTheme) {
+    cls.push(classes.DarkTheme);
+  }
+
   return (
     <div
-      className={classes.CountriesCard}
+      className={cls.join(' ')}
       onClick={() => props.selectCountry(props.cca3)}
     >
       <div className={classes.Flag}>

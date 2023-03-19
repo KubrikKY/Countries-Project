@@ -11,6 +11,7 @@ function App() {
   const [showsCountries, setShowsCountries] = useState([]);
   const [regions, setRegions] = useState([]);
   const [selectCountries, setSelectCountries] = useState(null);
+  const [toggleTheme, setToggleTheme] = useState(true);
 
   useEffect(() => {
     fetch('https://restcountries.com/v3.1/all')
@@ -22,6 +23,10 @@ function App() {
         setRegions(Array.from(new Set(data.map((e) => e.region))));
       });
   }, []);
+
+  const setThemeHandler = () => {
+    setToggleTheme(!toggleTheme);
+  };
 
   const findCountry = (value) => {
     const findContriesList = contriesList.filter(
@@ -48,27 +53,35 @@ function App() {
     setShowsCountries([...contriesList]);
   };
 
+  const cls = [classes.App];
+
+  if (!toggleTheme) {
+    cls.push(classes.darkTheme);
+  }
+
   return (
-    <div className={classes.App}>
-      <Header />
+    <div className={cls.join(' ')}>
+      <Header toggleNightMode={toggleTheme} setTheme={setThemeHandler} />
       {!selectCountries ? (
         <>
           <Navigation
             region={regions}
-            nameCountries={contriesList.map((e) => e.name)}
             sortByRegion={(value) => sortByRegionHandler(value)}
             findCountry={(value) => findCountry(value)}
+            toggleTheme={toggleTheme}
           />
 
           <CountriesList
             countries={showsCountries}
             selectCountries={(ciocElem) => selectCountriesHandler(ciocElem)}
+            toggleTheme={toggleTheme}
           />
         </>
       ) : (
         <CountriesInfo
           {...selectCountries}
           backToList={() => selectCountriesHandler(null)}
+          toggleTheme={toggleTheme}
           selectBorderCountries={(cca3) => selectCountriesHandler(cca3)}
           borderName={contriesList.reduce((obj, e) => {
             obj[e.cca3] = e.name.common;
