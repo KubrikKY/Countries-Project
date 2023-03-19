@@ -19,7 +19,6 @@ function App() {
       .then((data) => {
         setCountriesList(data);
         setShowsCountries(data);
-        console.log(data);
         setRegions(Array.from(new Set(data.map((e) => e.region))));
       });
   }, []);

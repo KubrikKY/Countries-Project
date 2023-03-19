@@ -15,6 +15,9 @@
     font-weight: 800;
   }
   @media screen and (max-width: 400px) {
+    height: 100px;
+    padding: 0 20px;
+
     h1 {
       font-size: 15px;
     }

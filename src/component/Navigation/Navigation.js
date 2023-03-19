@@ -20,7 +20,7 @@ function Navigation(props) {
 
       <select
         onChange={(e) => props.sortByRegion(e.target.value)}
-        className={!props.toggleTheme && classes.DarkTheme}
+        className={!props.toggleTheme ? classes.DarkTheme : undefined}
       >
         <option value="" select="true">
           Filter by region
