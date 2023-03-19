@@ -3,7 +3,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   max-width: 250px;
   width: 100%;
@@ -18,13 +18,6 @@
 
   transition: opacity 0.1s linear;
 
-  h3 {
-    font-weight: 800;
-  }
-  span {
-    font-weight: 600;
-  }
-
   &:hover {
     opacity: 1;
   }
@@ -38,10 +31,22 @@
 .Flag {
   border-radius: 10px 10px 0 0;
   height: 50%;
+  width: 100%;
   overflow: hidden;
   img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+  }
+}
+
+.Info {
+  padding: 10px 10px 5px 10px;
+  h3 {
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  span {
+    font-weight: 600;
   }
 }

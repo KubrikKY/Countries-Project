@@ -15,18 +15,20 @@ function CountriesCard(props) {
       <div className={classes.Flag}>
         <img src={props.flag} alt={`${props.name} flag`} />
       </div>
-      <h3>{props.name}</h3>
-      <ul>
-        <li>
-          <span>Population:</span> {props.population}
-        </li>
-        <li>
-          <span>Region:</span> {props.region}
-        </li>
-        <li>
-          <span>Capital:</span> {props.capital}
-        </li>
-      </ul>
+      <div className={classes.Info}>
+        <h3>{props.name}</h3>
+        <ul>
+          <li>
+            <span>Population:</span> {props.population}
+          </li>
+          <li>
+            <span>Region:</span> {props.region}
+          </li>
+          <li>
+            <span>Capital:</span> {props.capital}
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
