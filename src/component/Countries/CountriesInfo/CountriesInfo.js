@@ -1,6 +1,22 @@
 import React from 'react';
 import classes from './CountriesInfo.module.scss';
 function CountriesInfo(props) {
+  const languages = [];
+  const currencies = [];
+  const nativeName = [];
+
+  for (let name of Object.values(props.name.nativeName)) {
+    nativeName.push(name.official);
+  }
+
+  for (let curren of Object.values(props.currencies)) {
+    currencies.push(curren.name);
+  }
+
+  for (let lang of Object.values(props.languages)) {
+    languages.push(lang);
+  }
+
   return (
     <div className={classes.infoCard}>
       <button className={classes.buttonBack} onClick={props.backToList}>
@@ -14,7 +30,7 @@ function CountriesInfo(props) {
           <h2>{props.name.official}</h2>
           <ul>
             <li>
-              <span>Native name:</span> {props.capital}
+              <span>Native name:</span> {nativeName.join(', ')}
             </li>
             <li>
               <span>Population:</span> {props.population}
@@ -23,7 +39,7 @@ function CountriesInfo(props) {
               <span>Region:</span> {props.region}
             </li>
             <li>
-              <span>Sub Region:</span> {props.capital}
+              <span>Sub Region:</span> {props.subregion}
             </li>
             <li>
               <span>Capital:</span> {props.capital}
@@ -32,17 +48,17 @@ function CountriesInfo(props) {
               <span>Top Level Domain:</span> {props.capital}
             </li>
             <li>
-              <span>Curriencies:</span> {props.capital}
+              <span>Curriencies:</span> {currencies.join(', ')}
             </li>
             <li>
-              <span>Languages:</span> {props.capital}
+              <span>Languages:</span> {languages.join(', ')}
             </li>
           </ul>
-          <div className={classes.borderCountriesContainer}>
-            <span>Border Countries: </span>
+          {props.borders && (
+            <div className={classes.borderCountriesContainer}>
+              <span>Border Countries: </span>
 
-            {props.borders &&
-              props.borders.map((e) => {
+              {props.borders.map((e) => {
                 return (
                   <button
                     className={classes.borderCountry}
@@ -54,7 +70,8 @@ function CountriesInfo(props) {
                   </button>
                 );
               })}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
