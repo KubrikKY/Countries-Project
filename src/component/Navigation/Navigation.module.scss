@@ -1,0 +1,14 @@
+.Navigation {
+  margin-bottom: 30px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .Search {
+    width: 33.333%;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,9 @@
+.CountriesList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  row-gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}

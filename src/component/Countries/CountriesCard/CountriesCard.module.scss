@@ -1,0 +1,33 @@
+.CountriesCard {
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 250px;
+  width: 100%;
+  height: 250px;
+  max-width: 200px;
+
+  align-self: center;
+  justify-self: center;
+
+  h3 {
+    font-weight: 800;
+  }
+  span {
+    font-weight: 600;
+  }
+}
+
+.Flag {
+  border-radius: 10px 10px 0 0;
+  height: 50%;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}

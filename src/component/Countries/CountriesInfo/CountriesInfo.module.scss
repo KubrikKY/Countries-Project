@@ -1,0 +1,53 @@
+.infoCard {
+  padding: 0 30px;
+}
+
+.CountriesInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    font-weight: 600;
+  }
+  .Flag {
+    max-width: 50%;
+  }
+  .Info {
+    max-width: 50%;
+    width: 100%;
+    padding: 50px;
+    h2 {
+      font-weight: 800;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      direction: columns;
+      flex-wrap: wrap;
+      max-height: 200px;
+    }
+  }
+}
+
+.buttonBack {
+  width: 100px;
+  height: 50px;
+  background: #fff;
+  box-shadow: 2px 2px 2px 2px lightgrey;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+
+.borderCountry {
+  width: 80px;
+  height: 40px;
+  background: #fff;
+  box-shadow: 2px 2px 2px 2px lightgrey;
+  border-radius: 10px;
+  margin-left: 10px;
+}
