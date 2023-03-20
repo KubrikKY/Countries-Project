@@ -4,7 +4,6 @@ function CountriesInfo(props) {
   const languages = [];
   const currencies = [];
   const nativeName = [];
-  console.log(languages, currencies, nativeName);
   if (props.name.nativeName) {
     for (let name of Object.values(props.name.nativeName)) {
       nativeName.push(name.official);
@@ -22,8 +21,6 @@ function CountriesInfo(props) {
       languages.push(lang);
     }
   }
-
-  console.log(typeof nativeName.length);
 
   const clsBackButton = [classes.buttonBack];
   const clsBorderButton = [classes.borderCountry];
