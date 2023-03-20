@@ -4,18 +4,26 @@ function CountriesInfo(props) {
   const languages = [];
   const currencies = [];
   const nativeName = [];
-
-  for (let name of Object.values(props.name.nativeName)) {
-    nativeName.push(name.official);
+  console.log(languages, currencies, nativeName);
+  if (props.name.nativeName) {
+    for (let name of Object.values(props.name.nativeName)) {
+      nativeName.push(name.official);
+    }
   }
 
-  for (let curren of Object.values(props.currencies)) {
-    currencies.push(curren.name);
+  if (props.currencies) {
+    for (let curren of Object.values(props.currencies)) {
+      currencies.push(curren.name);
+    }
   }
 
-  for (let lang of Object.values(props.languages)) {
-    languages.push(lang);
+  if (props.languages) {
+    for (let lang of Object.values(props.languages)) {
+      languages.push(lang);
+    }
   }
+
+  console.log(typeof nativeName.length);
 
   const clsBackButton = [classes.buttonBack];
   const clsBorderButton = [classes.borderCountry];
@@ -37,30 +45,46 @@ function CountriesInfo(props) {
         <div className={classes.Info}>
           <h2>{props.name.official}</h2>
           <ul>
-            <li>
-              <span>Native name:</span> {nativeName.join(', ')}
-            </li>
-            <li>
-              <span>Population:</span> {props.population}
-            </li>
-            <li>
-              <span>Region:</span> {props.region}
-            </li>
-            <li>
-              <span>Sub Region:</span> {props.subregion}
-            </li>
-            <li>
-              <span>Capital:</span> {props.capital}
-            </li>
-            <li>
-              <span>Top Level Domain:</span> {props.tld}
-            </li>
-            <li>
-              <span>Curriencies:</span> {currencies.join(', ')}
-            </li>
-            <li>
-              <span>Languages:</span> {languages.join(', ')}
-            </li>
+            {!!nativeName.length && (
+              <li>
+                <span>Native name:</span> {nativeName.join(', ')}
+              </li>
+            )}
+            {props.population && (
+              <li>
+                <span>Population:</span> {props.population}
+              </li>
+            )}
+            {props.region && (
+              <li>
+                <span>Region:</span> {props.region}
+              </li>
+            )}
+            {props.subregion && (
+              <li>
+                <span>Sub Region:</span> {props.subregion}
+              </li>
+            )}
+            {props.capital && (
+              <li>
+                <span>Capital:</span> {props.capital}
+              </li>
+            )}
+            {props.tld && (
+              <li>
+                <span>Top Level Domain:</span> {props.tld}
+              </li>
+            )}
+            {!!currencies.length && (
+              <li>
+                <span>Curriencies:</span> {currencies.join(', ')}
+              </li>
+            )}
+            {!!languages.length && (
+              <li>
+                <span>Languages:</span> {languages.join(', ')}
+              </li>
+            )}
           </ul>
           {props.borders && (
             <div className={classes.borderCountriesContainer}>

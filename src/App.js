@@ -39,6 +39,9 @@ function App() {
   const selectCountriesHandler = (cca3Elem) => {
     const Country = contriesList.find((e) => e.cca3 === cca3Elem);
     setSelectCountries(Country);
+    if (!cca3Elem) {
+      setShowsCountries([...contriesList]);
+    }
   };
 
   const sortByRegionHandler = (regionValue) => {
